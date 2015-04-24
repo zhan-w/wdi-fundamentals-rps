@@ -25,18 +25,14 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move` 
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return /* Your Expression */;
-    var move;
-    move = move || 'getInput()';
+    return move || 'getInput()';
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return /* Your Expression */;
-    var move;
-    move = move || 'randomPlay()';
+    return move || 'randomPlay()';
 }
 
 function getWinner(playerMove,computerMove) {
@@ -45,8 +41,8 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
-    var playerMove = ['rock', 'paper', 'scissors'];
-    var computerMove = ['rock', 'paper', 'scissors'];
+    playerMove = ['rock', 'paper', 'scissors'];
+    computerMove = ['rock', 'paper', 'scissors'];
 
     if ((playerMove[0] && computerMove[2]) || (playerMove[1] && computerMove[0]) || (playerMove[2] && computerMove[1])) {
         return winner[0];
@@ -64,6 +60,16 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while (playerWins < 5 || computerWins < 5) {
+        if (winner[0]) {
+            playerWins += 1;
+        }
+        if (winner[1]) {
+            computerWins += 1;
+        }
+        console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+        console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');    
+    }
     return [playerWins, computerWins];
 }
 
